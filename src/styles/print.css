@@ -1,0 +1,176 @@
+@media print {
+  /* Hide non-printable elements */
+  button {
+    display: none !important;
+  }
+
+  /* Reset page margins */
+  @page {
+    margin: 2cm;
+  }
+
+  /* General document styles */
+  body {
+    font-size: 12pt;
+    line-height: 1.3;
+    background: #fff;
+    color: #000;
+  }
+
+  /* Ensure the document takes full width */
+  .max-w-4xl {
+    max-width: none !important;
+  }
+
+  /* Remove backgrounds and shadows */
+  .bg-white,
+  .bg-gray-50,
+  .shadow-md {
+    background: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Improve table borders for printing */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  th,
+  td {
+    border: 1px solid #000 !important;
+    padding: 0.5cm !important;
+  }
+
+  /* Ensure proper page breaks */
+  h1, h2, h3,
+  table,
+  section {
+    break-inside: avoid;
+  }
+
+  /* Add page numbers */
+  @page {
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  /* Hide the configuration modal */
+  .fixed.inset-0.bg-black {
+    display: none !important;
+  }
+
+  /* Ensure text is black for better printing */
+  .text-gray-600,
+  .text-gray-800 {
+    color: #000 !important;
+  }
+
+  /* Improve heading visibility */
+  h1 {
+    font-size: 24pt !important;
+    margin-bottom: 1cm !important;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    margin-bottom: 0.5cm !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin-bottom: 0.3cm !important;
+  }
+
+  /* Ensure proper spacing between sections */
+  section {
+    margin-bottom: 1cm !important;
+  }
+
+  /* Make sure the code of conduct is visible when printing */
+  #code-of-conduct {
+    display: block !important;
+  }
+
+  /* Tournament Bracket Print Styles */
+  .tournament-bracket {
+    page-break-before: always;
+  }
+
+  .tournament-bracket .flex {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2cm !important;
+  }
+
+  .tournament-bracket .flex-1 {
+    flex: 1 !important;
+    position: relative !important;
+  }
+
+  .tournament-bracket .match-card {
+    border: 1px solid #000 !important;
+    padding: 0.5cm !important;
+    margin-bottom: 1cm !important;
+    page-break-inside: avoid !important;
+    position: relative !important;
+  }
+
+  .tournament-bracket .player {
+    padding: 0.25cm !important;
+    margin-bottom: 0.25cm !important;
+    border-bottom: 1px solid #000 !important;
+  }
+
+  .tournament-bracket .winner {
+    font-weight: bold !important;
+    background: #f0f0f0 !important;
+  }
+
+  .tournament-bracket .score {
+    font-weight: normal !important;
+    color: #000 !important;
+  }
+
+  /* Bracket connecting lines */
+  .tournament-bracket .relative {
+    position: relative !important;
+  }
+
+  .tournament-bracket .absolute {
+    position: absolute !important;
+  }
+
+  .tournament-bracket [class*="-left-"] {
+    border-left: 1px solid #000 !important;
+    border-top: 1px solid #000 !important;
+  }
+
+  /* Hide match actions when printing */
+  .tournament-bracket .match-actions {
+    display: none !important;
+  }
+
+  /* Round headers */
+  .tournament-bracket h3 {
+    font-size: 14pt !important;
+    font-weight: bold !important;
+    margin-bottom: 1cm !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Ensure bracket lines print */
+  .tournament-bracket .bg-gray-300 {
+    background: none !important;
+    border: 1px solid #000 !important;
+  }
+
+  /* Player names and scores */
+  .tournament-bracket .font-medium {
+    font-weight: bold !important;
+  }
+
+  .tournament-bracket .text-gray-600 {
+    color: #000 !important;
+  }
+} 
