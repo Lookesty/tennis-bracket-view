@@ -10,11 +10,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f9fafb;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  /* Prevent zoom on input focus on iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Better touch scrolling for brackets */
+  .bracket-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Smaller text for mobile */
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  /* Better button sizing for mobile */
+  .mobile-btn {
+    min-height: 44px; /* iOS recommended touch target size */
+    padding: 8px 12px;
+  }
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -35,4 +65,38 @@ code {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a8;
+}
+
+/* Mobile bracket container */
+.bracket-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+/* Mobile-friendly table */
+@media (max-width: 768px) {
+  .mobile-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .mobile-table th,
+  .mobile-table td {
+    min-width: 120px;
+  }
+  
+  /* Better mobile bracket viewing */
+  .bracket-container {
+    padding: 8px;
+    margin: 0 -8px;
+  }
+  
+  /* Responsive match cards */
+  .match-card {
+    min-width: 120px;
+    max-width: 150px;
+  }
 }

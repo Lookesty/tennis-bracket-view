@@ -401,11 +401,11 @@ function RoundRobinBracketView() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-6">
+    <div className="max-w-[1400px] mx-auto px-4 py-4 sm:py-8">
+      <div className="flex justify-between items-center mb-4 sm:mb-6">
         <div>
-          <h1 className="text-2xl font-bold">{tournament?.name} - Status Tracker</h1>
-          <div className="text-gray-600 mt-1">{tournament?.status}</div>
+          <h1 className="text-xl sm:text-2xl font-bold">{tournament?.name} - Status Tracker</h1>
+          <div className="text-gray-600 mt-1 text-sm sm:text-base">{tournament?.status}</div>
         </div>
       </div>
 
@@ -426,7 +426,7 @@ function RoundRobinBracketView() {
         <>
           {/* Category Selection */}
           <div className="space-y-4">
-            <div className="flex gap-3 overflow-x-auto p-3">
+            <div className="flex gap-2 sm:gap-3 overflow-x-auto p-2 sm:p-3">
               {categories.map((category) => {
                 const [gender, type, ageGroup] = category.id.split('_');
                 const isSelected = selectedCategory === category.id;
@@ -444,7 +444,7 @@ function RoundRobinBracketView() {
                           setSelectedGroup(firstGroupLetter);
                         }
                       }}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition-all duration-200 w-full ${
+                      className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium shadow-sm transition-all duration-200 w-full ${
                         isSelected
                           ? 'bg-green-50 text-green-700 ring-2 ring-green-500 ring-offset-2'
                           : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200'
@@ -487,8 +487,8 @@ function RoundRobinBracketView() {
           </div>
 
           {selectedCategory && (
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-2">
+            <div className="mt-6 sm:mt-8">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">
                 Tournament Bracket - {
                   selectedCategory.split('_').map(word => 
                     word.charAt(0).toUpperCase() + word.slice(1)

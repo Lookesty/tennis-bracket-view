@@ -46,14 +46,15 @@ export default function TournamentDirectory() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl font-bold text-gray-800">Tournament Brackets</h1>
-        <p className="text-gray-600 mt-2">Public bracket viewer directory</p>
+    <div className="max-w-6xl mx-auto p-4 sm:p-6">
+      <div className="mb-6 sm:mb-8 text-center">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">Tournament Brackets</h1>
+        <p className="text-gray-600 mt-2 text-sm sm:text-base">Public bracket viewer directory</p>
       </div>
 
       <div className="bg-white shadow rounded-lg overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-200">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200 mobile-table">
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -105,9 +106,10 @@ export default function TournamentDirectory() {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
 
-      <div className="mt-8 text-center text-sm text-gray-500">
+      <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm text-gray-500">
         <p>Share tournament brackets by copying the direct link to a specific tournament.</p>
         <p className="mt-1">Public users will land directly on the bracket view when using a shared link.</p>
       </div>

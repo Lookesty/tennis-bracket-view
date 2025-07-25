@@ -388,17 +388,17 @@ function SingleEliminationBracketView() {
         )}
         {/* Match Status Legend */}
         <div className="mb-4">
-          <div className="text-sm text-gray-600 mb-2">Match Status Guide:</div>
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-2 border-gray-300 bg-white rounded flex items-center justify-center"><span className="text-[12px]">Not Scheduled</span></div></div>
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-[3px] border-blue-600 bg-blue-50 rounded flex items-center justify-center"><span className="text-[12px]">Scheduled</span></div></div>
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-[3px] border-green-500 bg-green-50 rounded flex items-center justify-center"><span className="text-[12px]">Completed</span></div></div>
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-[3px] border-red-600 bg-red-50 rounded flex items-center justify-center"><span className="text-[12px]">Overdue</span></div></div>
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-[4px] border-red-600 shadow-[inset_0_0_0_2px_#2563eb] bg-blue-50 rounded flex items-center justify-center"><span className="text-[12px]">Scheduled & Overdue</span></div></div>
-            <div className="min-w-[115px] h-[46px] flex items-center justify-center"><div className="w-full h-[37px] border-[3px] border-yellow-600 bg-yellow-50 rounded flex items-center justify-center"><span className="text-[12px]">Ready to Schedule</span></div></div>
+          <div className="text-xs sm:text-sm text-gray-600 mb-2">Match Status Guide:</div>
+          <div className="flex gap-1 sm:gap-2 overflow-x-auto pb-2">
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-2 border-gray-300 bg-white rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Not Scheduled</span></div></div>
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-[3px] border-blue-600 bg-blue-50 rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Scheduled</span></div></div>
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-[3px] border-green-500 bg-green-50 rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Completed</span></div></div>
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-[3px] border-red-600 bg-red-50 rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Overdue</span></div></div>
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-[4px] border-red-600 shadow-[inset_0_0_0_2px_#2563eb] bg-blue-50 rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Scheduled & Overdue</span></div></div>
+            <div className="min-w-[90px] sm:min-w-[115px] h-[40px] sm:h-[46px] flex items-center justify-center"><div className="w-full h-[32px] sm:h-[37px] border-[3px] border-yellow-600 bg-yellow-50 rounded flex items-center justify-center"><span className="text-[10px] sm:text-[12px]">Ready to Schedule</span></div></div>
           </div>
         </div>
-        <div className="relative overflow-x-auto p-4 bg-gray-50 rounded-lg" style={{ height: bracketDimensions.height + 20, width: bracketDimensions.width + 20 }}>
+        <div className="relative overflow-x-auto p-2 sm:p-4 bg-gray-50 rounded-lg bracket-container" style={{ height: bracketDimensions.height + 20, width: bracketDimensions.width + 20 }}>
           {lines.map(line => {
             const isHorizontal = line.y1 === line.y2;
             const isVertical = line.x1 === line.x2;
@@ -445,20 +445,20 @@ function SingleEliminationBracketView() {
     return <div className="text-center py-8 text-gray-600">Draws have not been launched yet for this tournament.</div>;
   }
   return (
-    <div className="max-w-6xl mx-auto p-6">
-      <div className="flex justify-between items-center mb-8">
+    <div className="max-w-6xl mx-auto p-4 sm:p-6">
+      <div className="flex justify-between items-center mb-6 sm:mb-8">
         <div>
-          <h1 className="text-2xl font-bold">{tournament?.name} - Status Tracker</h1>
-          <div className="text-gray-600 mt-1">{tournament?.status}</div>
+          <h1 className="text-xl sm:text-2xl font-bold">{tournament?.name} - Status Tracker</h1>
+          <div className="text-gray-600 mt-1 text-sm sm:text-base">{tournament?.status}</div>
         </div>
       </div>
       {/* Category Filters */}
-      <div className="flex gap-3 mb-6 overflow-x-auto p-3">
+      <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6 overflow-x-auto pb-2">
         {categories.map((category) => (
           <button
             key={category.id}
             onClick={() => setSelectedCategory(category.id)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium min-w-[100px] shadow-sm transition-all duration-200 ${
+            className={`px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium min-w-[80px] sm:min-w-[100px] shadow-sm transition-all duration-200 ${
               selectedCategory === category.id
                 ? 'bg-green-50 text-green-700 ring-2 ring-green-500 ring-offset-2'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200 border border-gray-200'
