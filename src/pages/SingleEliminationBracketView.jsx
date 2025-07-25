@@ -445,7 +445,7 @@ function SingleEliminationBracketView() {
     return <div className="text-center py-8 text-gray-600">Draws have not been launched yet for this tournament.</div>;
   }
   return (
-    <div className="max-w-6xl mx-auto p-4 sm:p-6">
+    <div className="max-w-6xl mx-auto p-4 pt-10 sm:p-6">
       <div className="flex justify-between items-center mb-6 sm:mb-8">
         <div>
           <h1 className="text-xl sm:text-2xl font-bold">{tournament?.name} - Status Tracker</h1>
@@ -453,7 +453,7 @@ function SingleEliminationBracketView() {
         </div>
       </div>
       {/* Category Filters */}
-      <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6 overflow-x-auto pb-2">
+      <div className="flex gap-2 sm:gap-3 mb-4 sm:mb-6 overflow-x-auto pb-2 px-4 -mx-4 pt-2">
         {categories.map((category) => (
           <button
             key={category.id}
