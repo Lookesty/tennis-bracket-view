@@ -5,10 +5,10 @@ import TournamentBracketView from "./pages/TournamentBracketView";
 
 export default function App() {
   return (
-    <Routes>
+      <Routes>
       <Route path="/" element={<TournamentDirectory />} />
       <Route path="/:id" element={<TournamentBracketView />} />
-    </Routes>
+      </Routes>
   );
 }
 
