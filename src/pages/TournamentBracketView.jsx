@@ -14,7 +14,7 @@ function TournamentBracketView() {
     const fetchTournamentFormat = async () => {
       try {
         const { data, error } = await supabase
-          .from('tennis_events')
+          .from('public_tournament_listings')
           .select('format')
           .eq('id', tournamentId)
           .single();

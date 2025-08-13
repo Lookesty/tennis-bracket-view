@@ -10,12 +10,20 @@ export default function TournamentDirectory() {
   useEffect(() => {
     const fetchTournaments = async () => {
       try {
+        console.log('Fetching tournaments from public_tournament_listings...');
         const { data, error } = await supabase
-          .from("tennis_events")
+          .from("public_tournament_listings")
           .select("id, name, status, format")
           .order('created_at', { ascending: false });
 
-        if (error) throw error;
+        if (error) {
+          console.error('Supabase error:', error);
+          throw error;
+        }
+        
+        console.log('Raw data from view:', data);
+        console.log('Data length:', data?.length);
+        
         setTournaments(data.filter(t => t && t.id));
       } catch (error) {
         console.error("Error fetching tournaments:", error);
